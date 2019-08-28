@@ -1,4 +1,4 @@
-# Administrador-de-Tareas
+# Administrador de tareas.
 
 - Un administrador de tareas que lea y gestione procesos, la CPU, memoria y disco de un sistema operativo con datos falsos. 
 - Verificar el incremento de proceso. 

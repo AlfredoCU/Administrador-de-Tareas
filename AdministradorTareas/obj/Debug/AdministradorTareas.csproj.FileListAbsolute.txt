@@ -1,0 +1,9 @@
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\bin\Debug\AdministradorTareas.exe.config
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\bin\Debug\AdministradorTareas.exe
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\bin\Debug\AdministradorTareas.pdb
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.csprojResolveAssemblyReference.cache
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.Properties.Resources.resources
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.csproj.GenerateResource.Cache
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.exe
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.pdb
+C:\Users\Alfredo\Desktop\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.Admin.resources

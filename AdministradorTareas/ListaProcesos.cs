@@ -62,7 +62,7 @@ namespace AdministradorTareas
             ProcesosLista.Add(dt7);
             Procesos dt8 = new Procesos("CCleaner64.exe", 7476, "Ejecutando", "Alfredo", 4.8, DatosMemoria(), 0, "CCleaner");
             ProcesosLista.Add(dt8);
-            Procesos dt9 = new Procesos("explorer.exe", 21048, "Ejecutando", "Alfredo", DatosCPU(), 240.3, 0, "google Chrome");
+            Procesos dt9 = new Procesos("explorer.exe", 21048, "Ejecutando", "Alfredo", DatosCPU(), 240.3, 0, "Google Chrome");
             ProcesosLista.Add(dt9);
             Procesos dt10 = new Procesos("AppleMobileDeviceService.exe", 36600, "Ejecutando", "SYSTEM", 0, 1.5, 0, "MobileDeviceService");
             ProcesosLista.Add(dt10);

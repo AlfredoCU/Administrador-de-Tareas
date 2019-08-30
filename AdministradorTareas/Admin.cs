@@ -14,6 +14,7 @@ namespace AdministradorTareas
     {
         // Instancia de la lista de procesos.
         ListaProcesos lp = new ListaProcesos();
+        Validar v = new Validar();
 
         // Constructor.
         public Admin()
@@ -24,58 +25,225 @@ namespace AdministradorTareas
         // Form.
         private void Admin_Load(object sender, EventArgs e)
         {
+            // Inicializar lista.
             lp.IniciaLista();
+
+            // Se actualiza las tablas y el total de procesos.
+            ActualizarDatos();
+
+            // Cargar datos a los ComboBox.
+            this.cbEstado.Items.Add("Ejecutando");
+            this.cbEstado.Items.Add("Suspendido");
+            this.cbUsuario.Items.Add("Alfredo");
+            this.cbUsuario.Items.Add("Miguel");
+            this.cbUsuario.Items.Add("Sergio");
+            this.cbUsuario.Items.Add("SYSTEM");
+            this.cbUsuario.Items.Add("SERVICIO LOCAL");
+
+            // Mensajes de ayuda.
+            this.ttMensajeAyuda.ToolTipTitle = "Complete los campos";
+            this.ttMensajeAyuda.ToolTipIcon = ToolTipIcon.Info;
+            this.ttMensajeAyuda.SetToolTip(this.txtNombre, "Ingrese letras: A, B, C...");
+            this.ttMensajeAyuda.SetToolTip(this.txtPidId, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.txtCpu, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.txtMemoria, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.txtDisco, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.cbEstado, "Elija un estado para el proceso.");
+            this.ttMensajeAyuda.SetToolTip(this.cbUsuario, "Elija un usuario para el proceso.");
+            this.ttMensajeAyuda.SetToolTip(this.txtDescripcion, "Ingrese letras: A, B, C...");
+            this.ttMensajeAyuda.SetToolTip(this.txtPID, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.txtPID2, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.txtCPUTope, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.txtMemoriaTope, "Ingrese números: 1, 2, 3, 4, 5...");
+            this.ttMensajeAyuda.SetToolTip(this.txtDiscoTope, "Ingrese números: 1, 2, 3, 4, 5...");
+
+            // Texbox de la vista Equipo desactivados.
+            this.txtCPUTope.Enabled = false;
+            this.txtMemoriaTope.Enabled = false;
+            this.txtDiscoTope.Enabled = false;
+        }
+
+        // Se actualiza las tablas y el total de procesos.
+        public void ActualizarDatos()
+        {
+            // Mostrar lista en la vista Nuevo proceso.
+            dgvProIngresado.DataSource = null;
+            dgvProIngresado.DataSource = lp.MostrarLista();
+
+            // Mostrar lista en la vista Procesos.
             dgvProcesos.DataSource = null;
             dgvProcesos.DataSource = lp.MostrarLista();
+
+            // Total de procesos.
             lblTotal.Text = "Total de procesos: " + lp.Total();
         }
 
-        // Boton de Actualizar.
-        private void btnActualizar_Click(object sender, EventArgs e)
+        // Limpiar todos los Textbox y ComboBox.
+        public void LimpiarTxt()
         {
-            lp.ReiniciarLista();
-            lp.IniciaLista();
-            dgvProcesos.DataSource = null;
-            dgvProcesos.DataSource = lp.MostrarLista();
-            lblTotal.Text = "Total de procesos: " + lp.Total();
+            this.txtNombre.Clear();
+            this.txtPidId.Clear();
+            this.txtCpu.Clear();
+            this.txtMemoria.Clear();
+            this.txtDisco.Clear();
+            this.cbEstado.SelectedIndex = -1;
+            this.cbUsuario.SelectedIndex = -1;
+            this.txtDescripcion.Clear();
+            this.txtPID.Clear();
+            this.txtPID2.Clear();
         }
 
-        // Validar el Textbox para que funcione sólo con números.
-        private void txtPID_KeyPress(object sender, KeyPressEventArgs e)
+        // Activar o desactivar Texbox de la vista Equipo.
+        public void ActivarDesactivar()
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (ckbActivar.Checked)
             {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
+                this.txtCPUTope.Enabled = true;
+                this.txtMemoriaTope.Enabled = true;
+                this.txtDiscoTope.Enabled = true;
             }
             else
             {
-                e.Handled = true;
+                this.txtCPUTope.Enabled = false;
+                this.txtMemoriaTope.Enabled = false;
+                this.txtDiscoTope.Enabled = false;
             }
         }
 
-        // Boton de Finalizar.
+        // Validar TextBox.
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloLetras(e);
+        }
+
+        private void txtPidId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtCpu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtMemoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtDisco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloLetras(e);
+        }
+
+        private void txtPID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtPID1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtPID2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtCPUTope_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtMemoriaTope_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtDiscoTope_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        // Botón de Ingresar.
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if (this.txtNombre.Text.Trim().Length == 0 || this.txtPidId.Text.Trim().Length == 0 || !(this.cbEstado.SelectedIndex > -1) ||
+                !(this.cbUsuario.SelectedIndex > -1) || this.txtCpu.Text.Trim().Length == 0 || this.txtMemoria.Text.Trim().Length == 0 ||
+                    this.txtDisco.Text.Trim().Length == 0 || this.txtDescripcion.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Rellene todos los campos por favor.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Procesos dt = new Procesos(this.txtNombre.Text, Int32.Parse(this.txtPidId.Text), this.cbEstado.Text, 
+                    this.cbUsuario.Text, Int32.Parse(this.txtCpu.Text), Int32.Parse(this.txtMemoria.Text), 
+                    Int32.Parse(this.txtDisco.Text), this.txtDescripcion.Text);
+
+                if(!(lp.BuscarLista(Int32.Parse(this.txtPidId.Text))))
+                {
+                    lp.InsertarLista(dt);
+                    ActualizarDatos();
+                    LimpiarTxt();
+                    MessageBox.Show("Proceso almacenado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo alamacenar (PID ya existe).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // Botón de Eliminar.
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.txtPID2.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("No ha agregado un valor.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                lp.EliminarDatoLista(Int32.Parse(txtPID2.Text));
+                ActualizarDatos();
+                LimpiarTxt();
+                MessageBox.Show("Proceso eliminado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        // Botón de Actualizar.
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            // Se actualiza las tablas y el total de procesos.
+            ActualizarDatos();
+            MessageBox.Show("Procesos actualizados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Botón de Finalizar.
         private void btnFinalizarProceso_Click(object sender, EventArgs e)
         {
-            if (txtPID.Text == "")
+            if (this.txtPID.Text.Trim().Length == 0)
             {
-                MessageBox.Show("No ha agregado un valor o el valor es erróneo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No ha agregado un valor.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 lp.EliminarDatoLista(Int32.Parse(txtPID.Text));
-                dgvProcesos.DataSource = null;
-                dgvProcesos.DataSource = lp.MostrarLista();
-                lblTotal.Text = "Total de procesos: " + lp.Total();
-                txtPID.Clear();
+                ActualizarDatos();
+                LimpiarTxt();
+                MessageBox.Show("Proceso finalizado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        // Activar o desactivar los TextBox de la vista Equipo.
+        private void ckbActivar_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivarDesactivar();
         }
 
         // Opción Información.
@@ -94,11 +262,9 @@ namespace AdministradorTareas
         // Opción Actializar.
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lp.ReiniciarLista();
-            lp.IniciaLista();
-            dgvProcesos.DataSource = null;
-            dgvProcesos.DataSource = lp.MostrarLista();
-            lblTotal.Text = "Total de procesos: " + lp.Total();
+            // Se actualiza las tablas y el total de procesos.
+            ActualizarDatos();
+            MessageBox.Show("Procesos actualizados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         // Opción Salir.

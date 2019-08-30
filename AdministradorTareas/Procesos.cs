@@ -20,6 +20,7 @@ namespace AdministradorTareas
 
         // Contructores;
         public Procesos() { }
+
         public Procesos(string nombre, int pid, string estado, string nombreUsuario, double cpu, double memoria, double disco, string descripcion)
         {
             this.nombre = nombre;

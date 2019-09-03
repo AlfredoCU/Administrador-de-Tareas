@@ -30,12 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.msPrincipal = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,17 +57,20 @@
             this.tcProcesos = new System.Windows.Forms.TabControl();
             this.tpNuevoProcesos = new System.Windows.Forms.TabPage();
             this.gbProcesos = new System.Windows.Forms.GroupBox();
+            this.dgvProIngresado = new System.Windows.Forms.DataGridView();
             this.gbControl = new System.Windows.Forms.GroupBox();
+            this.lblPID2 = new System.Windows.Forms.Label();
+            this.txtPID2 = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.gbIngresar = new System.Windows.Forms.GroupBox();
+            this.txtTiempo = new System.Windows.Forms.TextBox();
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.cbUsuario = new System.Windows.Forms.ComboBox();
             this.txtMemoria = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.lblMemoria = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.txtCpu = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblDisco = new System.Windows.Forms.Label();
@@ -70,40 +83,44 @@
             this.tpProcesos = new System.Windows.Forms.TabPage();
             this.dgvProcesos = new System.Windows.Forms.DataGridView();
             this.tpRendimiento = new System.Windows.Forms.TabPage();
+            this.cGrafica3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cGrafica2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cGrafica1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tpEquipo = new System.Windows.Forms.TabPage();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.gbMaquina = new System.Windows.Forms.GroupBox();
+            this.ckbActivar = new System.Windows.Forms.CheckBox();
+            this.txtCPUTope = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDiscoTope = new System.Windows.Forms.TextBox();
+            this.lblCpuTope = new System.Windows.Forms.Label();
+            this.txtMemoriaTope = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbImg = new System.Windows.Forms.PictureBox();
+            this.gbInfo = new System.Windows.Forms.GroupBox();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.btnFinalizarProceso = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtPID = new System.Windows.Forms.TextBox();
             this.lblPID = new System.Windows.Forms.Label();
             this.ttMensajeAyuda = new System.Windows.Forms.ToolTip(this.components);
-            this.dgvProIngresado = new System.Windows.Forms.DataGridView();
-            this.txtPID2 = new System.Windows.Forms.TextBox();
-            this.lblPID2 = new System.Windows.Forms.Label();
-            this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.gbMaquina = new System.Windows.Forms.GroupBox();
-            this.pbImg = new System.Windows.Forms.PictureBox();
-            this.lblInfo = new System.Windows.Forms.Label();
-            this.txtMemoriaTope = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCPUTope = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDiscoTope = new System.Windows.Forms.TextBox();
-            this.lblCpuTope = new System.Windows.Forms.Label();
-            this.ckbActivar = new System.Windows.Forms.CheckBox();
+            this.tTiempo = new System.Windows.Forms.Timer(this.components);
             this.msPrincipal.SuspendLayout();
             this.tcProcesos.SuspendLayout();
             this.tpNuevoProcesos.SuspendLayout();
             this.gbProcesos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProIngresado)).BeginInit();
             this.gbControl.SuspendLayout();
             this.gbIngresar.SuspendLayout();
             this.tpProcesos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesos)).BeginInit();
+            this.tpRendimiento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cGrafica3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cGrafica2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cGrafica1)).BeginInit();
             this.tpEquipo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProIngresado)).BeginInit();
-            this.gbInfo.SuspendLayout();
             this.gbMaquina.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
+            this.gbInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // msPrincipal
@@ -133,7 +150,7 @@
             // 
             this.informaciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("informaciónToolStripMenuItem.Image")));
             this.informaciónToolStripMenuItem.Name = "informaciónToolStripMenuItem";
-            this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informaciónToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.informaciónToolStripMenuItem.Text = "Información";
             this.informaciónToolStripMenuItem.Click += new System.EventHandler(this.informaciónToolStripMenuItem_Click);
             // 
@@ -141,7 +158,7 @@
             // 
             this.salirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salirToolStripMenuItem.Image")));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -158,7 +175,7 @@
             // 
             this.ayudaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ayudaToolStripMenuItem.Image")));
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
@@ -175,7 +192,7 @@
             // 
             this.actualizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("actualizarToolStripMenuItem.Image")));
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
@@ -215,6 +232,48 @@
             this.gbProcesos.TabStop = false;
             this.gbProcesos.Text = "Procesos";
             // 
+            // dgvProIngresado
+            // 
+            this.dgvProIngresado.AllowUserToAddRows = false;
+            this.dgvProIngresado.AllowUserToOrderColumns = true;
+            this.dgvProIngresado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProIngresado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProIngresado.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProIngresado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProIngresado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProIngresado.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProIngresado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProIngresado.Location = new System.Drawing.Point(3, 21);
+            this.dgvProIngresado.MultiSelect = false;
+            this.dgvProIngresado.Name = "dgvProIngresado";
+            this.dgvProIngresado.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProIngresado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProIngresado.RowHeadersWidth = 25;
+            this.dgvProIngresado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProIngresado.Size = new System.Drawing.Size(934, 209);
+            this.dgvProIngresado.TabIndex = 68;
+            // 
             // gbControl
             // 
             this.gbControl.Controls.Add(this.lblPID2);
@@ -227,6 +286,26 @@
             this.gbControl.TabIndex = 74;
             this.gbControl.TabStop = false;
             this.gbControl.Text = "Control";
+            // 
+            // lblPID2
+            // 
+            this.lblPID2.AutoSize = true;
+            this.lblPID2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPID2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblPID2.Location = new System.Drawing.Point(15, 99);
+            this.lblPID2.Name = "lblPID2";
+            this.lblPID2.Size = new System.Drawing.Size(160, 18);
+            this.lblPID2.TabIndex = 77;
+            this.lblPID2.Text = "Eliminar proceso PID:";
+            // 
+            // txtPID2
+            // 
+            this.txtPID2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPID2.Location = new System.Drawing.Point(181, 96);
+            this.txtPID2.Name = "txtPID2";
+            this.txtPID2.Size = new System.Drawing.Size(106, 26);
+            this.txtPID2.TabIndex = 75;
+            this.txtPID2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPID2_KeyPress);
             // 
             // btnEliminar
             // 
@@ -258,13 +337,13 @@
             // 
             // gbIngresar
             // 
+            this.gbIngresar.Controls.Add(this.txtTiempo);
+            this.gbIngresar.Controls.Add(this.lblTiempo);
             this.gbIngresar.Controls.Add(this.lblUsuario);
             this.gbIngresar.Controls.Add(this.cbUsuario);
             this.gbIngresar.Controls.Add(this.txtMemoria);
             this.gbIngresar.Controls.Add(this.txtDescripcion);
-            this.gbIngresar.Controls.Add(this.lblEstado);
             this.gbIngresar.Controls.Add(this.lblMemoria);
-            this.gbIngresar.Controls.Add(this.cbEstado);
             this.gbIngresar.Controls.Add(this.txtCpu);
             this.gbIngresar.Controls.Add(this.lblDescripcion);
             this.gbIngresar.Controls.Add(this.lblDisco);
@@ -281,6 +360,22 @@
             this.gbIngresar.TabIndex = 0;
             this.gbIngresar.TabStop = false;
             this.gbIngresar.Text = "Ingresar un nuevo proceso";
+            // 
+            // txtTiempo
+            // 
+            this.txtTiempo.Location = new System.Drawing.Point(526, 92);
+            this.txtTiempo.Name = "txtTiempo";
+            this.txtTiempo.Size = new System.Drawing.Size(70, 25);
+            this.txtTiempo.TabIndex = 17;
+            // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Location = new System.Drawing.Point(460, 95);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(60, 17);
+            this.lblTiempo.TabIndex = 16;
+            this.lblTiempo.Text = "Tiempo:";
             // 
             // lblUsuario
             // 
@@ -304,26 +399,17 @@
             // 
             this.txtMemoria.Location = new System.Drawing.Point(103, 92);
             this.txtMemoria.Name = "txtMemoria";
-            this.txtMemoria.Size = new System.Drawing.Size(102, 25);
+            this.txtMemoria.Size = new System.Drawing.Size(126, 25);
             this.txtMemoria.TabIndex = 7;
             this.txtMemoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMemoria_KeyPress);
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(364, 141);
+            this.txtDescripcion.Location = new System.Drawing.Point(367, 141);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(232, 25);
+            this.txtDescripcion.Size = new System.Drawing.Size(229, 25);
             this.txtDescripcion.TabIndex = 15;
             this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(387, 95);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(58, 17);
-            this.lblEstado.TabIndex = 11;
-            this.lblEstado.Text = "Estado:";
             // 
             // lblMemoria
             // 
@@ -333,15 +419,6 @@
             this.lblMemoria.Size = new System.Drawing.Size(68, 17);
             this.lblMemoria.TabIndex = 6;
             this.lblMemoria.Text = "Memoria:";
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(451, 92);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(145, 25);
-            this.cbEstado.TabIndex = 10;
             // 
             // txtCpu
             // 
@@ -354,7 +431,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(268, 144);
+            this.lblDescripcion.Location = new System.Drawing.Point(271, 144);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(90, 17);
             this.lblDescripcion.TabIndex = 14;
@@ -363,7 +440,7 @@
             // lblDisco
             // 
             this.lblDisco.AutoSize = true;
-            this.lblDisco.Location = new System.Drawing.Point(224, 95);
+            this.lblDisco.Location = new System.Drawing.Point(271, 95);
             this.lblDisco.Name = "lblDisco";
             this.lblDisco.Size = new System.Drawing.Size(50, 17);
             this.lblDisco.TabIndex = 8;
@@ -371,7 +448,7 @@
             // 
             // txtDisco
             // 
-            this.txtDisco.Location = new System.Drawing.Point(280, 92);
+            this.txtDisco.Location = new System.Drawing.Point(327, 92);
             this.txtDisco.Name = "txtDisco";
             this.txtDisco.Size = new System.Drawing.Size(88, 25);
             this.txtDisco.TabIndex = 9;
@@ -438,36 +515,36 @@
             this.dgvProcesos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProcesos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProcesos.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcesos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcesos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProcesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProcesos.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProcesos.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProcesos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProcesos.Location = new System.Drawing.Point(3, 3);
             this.dgvProcesos.MultiSelect = false;
             this.dgvProcesos.Name = "dgvProcesos";
             this.dgvProcesos.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcesos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcesos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProcesos.RowHeadersWidth = 25;
             this.dgvProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcesos.Size = new System.Drawing.Size(1028, 456);
@@ -475,6 +552,9 @@
             // 
             // tpRendimiento
             // 
+            this.tpRendimiento.Controls.Add(this.cGrafica3);
+            this.tpRendimiento.Controls.Add(this.cGrafica2);
+            this.tpRendimiento.Controls.Add(this.cGrafica1);
             this.tpRendimiento.Location = new System.Drawing.Point(4, 26);
             this.tpRendimiento.Name = "tpRendimiento";
             this.tpRendimiento.Padding = new System.Windows.Forms.Padding(3);
@@ -482,6 +562,60 @@
             this.tpRendimiento.TabIndex = 2;
             this.tpRendimiento.Text = "Rendimiento";
             this.tpRendimiento.UseVisualStyleBackColor = true;
+            // 
+            // cGrafica3
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.cGrafica3.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.cGrafica3.Legends.Add(legend1);
+            this.cGrafica3.Location = new System.Drawing.Point(361, 206);
+            this.cGrafica3.Name = "cGrafica3";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.cGrafica3.Series.Add(series1);
+            this.cGrafica3.Size = new System.Drawing.Size(302, 224);
+            this.cGrafica3.TabIndex = 2;
+            this.cGrafica3.Text = "chart3";
+            // 
+            // cGrafica2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.cGrafica2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.cGrafica2.Legends.Add(legend2);
+            this.cGrafica2.Location = new System.Drawing.Point(726, 6);
+            this.cGrafica2.Name = "cGrafica2";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.cGrafica2.Series.Add(series2);
+            this.cGrafica2.Size = new System.Drawing.Size(302, 256);
+            this.cGrafica2.TabIndex = 1;
+            this.cGrafica2.Text = "chart2";
+            // 
+            // cGrafica1
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.cGrafica1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.cGrafica1.Legends.Add(legend3);
+            this.cGrafica1.Location = new System.Drawing.Point(6, 25);
+            this.cGrafica1.Name = "cGrafica1";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Series2";
+            this.cGrafica1.Series.Add(series3);
+            this.cGrafica1.Series.Add(series4);
+            this.cGrafica1.Size = new System.Drawing.Size(337, 237);
+            this.cGrafica1.TabIndex = 0;
+            this.cGrafica1.Text = "chart1";
             // 
             // tpEquipo
             // 
@@ -495,19 +629,117 @@
             this.tpEquipo.Text = "Equipo";
             this.tpEquipo.UseVisualStyleBackColor = true;
             // 
-            // btnActualizar
+            // gbMaquina
             // 
-            this.btnActualizar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(466, 525);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(180, 39);
-            this.btnActualizar.TabIndex = 5;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.gbMaquina.Controls.Add(this.ckbActivar);
+            this.gbMaquina.Controls.Add(this.txtCPUTope);
+            this.gbMaquina.Controls.Add(this.label3);
+            this.gbMaquina.Controls.Add(this.txtDiscoTope);
+            this.gbMaquina.Controls.Add(this.lblCpuTope);
+            this.gbMaquina.Controls.Add(this.txtMemoriaTope);
+            this.gbMaquina.Controls.Add(this.label2);
+            this.gbMaquina.Controls.Add(this.pbImg);
+            this.gbMaquina.Location = new System.Drawing.Point(555, 22);
+            this.gbMaquina.Name = "gbMaquina";
+            this.gbMaquina.Size = new System.Drawing.Size(443, 418);
+            this.gbMaquina.TabIndex = 2;
+            this.gbMaquina.TabStop = false;
+            this.gbMaquina.Text = "Maquina";
+            // 
+            // ckbActivar
+            // 
+            this.ckbActivar.AutoSize = true;
+            this.ckbActivar.Location = new System.Drawing.Point(163, 295);
+            this.ckbActivar.Name = "ckbActivar";
+            this.ckbActivar.Size = new System.Drawing.Size(137, 21);
+            this.ckbActivar.TabIndex = 14;
+            this.ckbActivar.Text = "Modificar Valores";
+            this.ckbActivar.UseVisualStyleBackColor = true;
+            this.ckbActivar.CheckedChanged += new System.EventHandler(this.ckbActivar_CheckedChanged);
+            // 
+            // txtCPUTope
+            // 
+            this.txtCPUTope.Location = new System.Drawing.Point(109, 332);
+            this.txtCPUTope.Name = "txtCPUTope";
+            this.txtCPUTope.Size = new System.Drawing.Size(87, 25);
+            this.txtCPUTope.TabIndex = 11;
+            this.txtCPUTope.Text = "4";
+            this.txtCPUTope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPUTope_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(156, 384);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Disco:";
+            // 
+            // txtDiscoTope
+            // 
+            this.txtDiscoTope.Location = new System.Drawing.Point(212, 381);
+            this.txtDiscoTope.Name = "txtDiscoTope";
+            this.txtDiscoTope.Size = new System.Drawing.Size(88, 25);
+            this.txtDiscoTope.TabIndex = 13;
+            this.txtDiscoTope.Text = "500000";
+            this.txtDiscoTope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscoTope_KeyPress);
+            // 
+            // lblCpuTope
+            // 
+            this.lblCpuTope.AutoSize = true;
+            this.lblCpuTope.Location = new System.Drawing.Point(60, 335);
+            this.lblCpuTope.Name = "lblCpuTope";
+            this.lblCpuTope.Size = new System.Drawing.Size(43, 17);
+            this.lblCpuTope.TabIndex = 10;
+            this.lblCpuTope.Text = "CPU:";
+            // 
+            // txtMemoriaTope
+            // 
+            this.txtMemoriaTope.Location = new System.Drawing.Point(303, 332);
+            this.txtMemoriaTope.Name = "txtMemoriaTope";
+            this.txtMemoriaTope.Size = new System.Drawing.Size(97, 25);
+            this.txtMemoriaTope.TabIndex = 9;
+            this.txtMemoriaTope.Text = "12000";
+            this.txtMemoriaTope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMemoriaTope_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(229, 335);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Memoria:";
+            // 
+            // pbImg
+            // 
+            this.pbImg.Image = ((System.Drawing.Image)(resources.GetObject("pbImg.Image")));
+            this.pbImg.Location = new System.Drawing.Point(0, 24);
+            this.pbImg.Name = "pbImg";
+            this.pbImg.Size = new System.Drawing.Size(443, 265);
+            this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImg.TabIndex = 0;
+            this.pbImg.TabStop = false;
+            // 
+            // gbInfo
+            // 
+            this.gbInfo.Controls.Add(this.lblInfo);
+            this.gbInfo.Location = new System.Drawing.Point(24, 6);
+            this.gbInfo.Name = "gbInfo";
+            this.gbInfo.Size = new System.Drawing.Size(486, 450);
+            this.gbInfo.TabIndex = 1;
+            this.gbInfo.TabStop = false;
+            this.gbInfo.Text = "Información del equipo";
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(17, 32);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(453, 391);
+            this.lblInfo.TabIndex = 3;
+            this.lblInfo.Text = resources.GetString("lblInfo.Text");
             // 
             // btnFinalizarProceso
             // 
@@ -554,179 +786,10 @@
             this.lblPID.TabIndex = 70;
             this.lblPID.Text = "Ingrese PID:";
             // 
-            // dgvProIngresado
+            // tTiempo
             // 
-            this.dgvProIngresado.AllowUserToAddRows = false;
-            this.dgvProIngresado.AllowUserToOrderColumns = true;
-            this.dgvProIngresado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProIngresado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvProIngresado.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProIngresado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvProIngresado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProIngresado.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvProIngresado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProIngresado.Location = new System.Drawing.Point(3, 21);
-            this.dgvProIngresado.MultiSelect = false;
-            this.dgvProIngresado.Name = "dgvProIngresado";
-            this.dgvProIngresado.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProIngresado.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvProIngresado.RowHeadersWidth = 25;
-            this.dgvProIngresado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProIngresado.Size = new System.Drawing.Size(934, 209);
-            this.dgvProIngresado.TabIndex = 68;
-            // 
-            // txtPID2
-            // 
-            this.txtPID2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPID2.Location = new System.Drawing.Point(181, 96);
-            this.txtPID2.Name = "txtPID2";
-            this.txtPID2.Size = new System.Drawing.Size(106, 26);
-            this.txtPID2.TabIndex = 75;
-            this.txtPID2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPID2_KeyPress);
-            // 
-            // lblPID2
-            // 
-            this.lblPID2.AutoSize = true;
-            this.lblPID2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPID2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblPID2.Location = new System.Drawing.Point(15, 99);
-            this.lblPID2.Name = "lblPID2";
-            this.lblPID2.Size = new System.Drawing.Size(160, 18);
-            this.lblPID2.TabIndex = 77;
-            this.lblPID2.Text = "Eliminar proceso PID:";
-            // 
-            // gbInfo
-            // 
-            this.gbInfo.Controls.Add(this.lblInfo);
-            this.gbInfo.Location = new System.Drawing.Point(24, 6);
-            this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(486, 450);
-            this.gbInfo.TabIndex = 1;
-            this.gbInfo.TabStop = false;
-            this.gbInfo.Text = "Información del equipo";
-            // 
-            // gbMaquina
-            // 
-            this.gbMaquina.Controls.Add(this.ckbActivar);
-            this.gbMaquina.Controls.Add(this.txtCPUTope);
-            this.gbMaquina.Controls.Add(this.label3);
-            this.gbMaquina.Controls.Add(this.txtDiscoTope);
-            this.gbMaquina.Controls.Add(this.lblCpuTope);
-            this.gbMaquina.Controls.Add(this.txtMemoriaTope);
-            this.gbMaquina.Controls.Add(this.label2);
-            this.gbMaquina.Controls.Add(this.pbImg);
-            this.gbMaquina.Location = new System.Drawing.Point(555, 22);
-            this.gbMaquina.Name = "gbMaquina";
-            this.gbMaquina.Size = new System.Drawing.Size(443, 418);
-            this.gbMaquina.TabIndex = 2;
-            this.gbMaquina.TabStop = false;
-            this.gbMaquina.Text = "Maquina";
-            // 
-            // pbImg
-            // 
-            this.pbImg.Image = ((System.Drawing.Image)(resources.GetObject("pbImg.Image")));
-            this.pbImg.Location = new System.Drawing.Point(0, 24);
-            this.pbImg.Name = "pbImg";
-            this.pbImg.Size = new System.Drawing.Size(443, 265);
-            this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImg.TabIndex = 0;
-            this.pbImg.TabStop = false;
-            // 
-            // lblInfo
-            // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(17, 32);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(453, 391);
-            this.lblInfo.TabIndex = 3;
-            this.lblInfo.Text = resources.GetString("lblInfo.Text");
-            // 
-            // txtMemoriaTope
-            // 
-            this.txtMemoriaTope.Location = new System.Drawing.Point(303, 332);
-            this.txtMemoriaTope.Name = "txtMemoriaTope";
-            this.txtMemoriaTope.Size = new System.Drawing.Size(97, 25);
-            this.txtMemoriaTope.TabIndex = 9;
-            this.txtMemoriaTope.Text = "12000";
-            this.txtMemoriaTope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMemoriaTope_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 335);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Memoria:";
-            // 
-            // txtCPUTope
-            // 
-            this.txtCPUTope.Location = new System.Drawing.Point(109, 332);
-            this.txtCPUTope.Name = "txtCPUTope";
-            this.txtCPUTope.Size = new System.Drawing.Size(87, 25);
-            this.txtCPUTope.TabIndex = 11;
-            this.txtCPUTope.Text = "4";
-            this.txtCPUTope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPUTope_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(156, 384);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Disco:";
-            // 
-            // txtDiscoTope
-            // 
-            this.txtDiscoTope.Location = new System.Drawing.Point(212, 381);
-            this.txtDiscoTope.Name = "txtDiscoTope";
-            this.txtDiscoTope.Size = new System.Drawing.Size(88, 25);
-            this.txtDiscoTope.TabIndex = 13;
-            this.txtDiscoTope.Text = "500000";
-            this.txtDiscoTope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscoTope_KeyPress);
-            // 
-            // lblCpuTope
-            // 
-            this.lblCpuTope.AutoSize = true;
-            this.lblCpuTope.Location = new System.Drawing.Point(60, 335);
-            this.lblCpuTope.Name = "lblCpuTope";
-            this.lblCpuTope.Size = new System.Drawing.Size(43, 17);
-            this.lblCpuTope.TabIndex = 10;
-            this.lblCpuTope.Text = "CPU:";
-            // 
-            // ckbActivar
-            // 
-            this.ckbActivar.AutoSize = true;
-            this.ckbActivar.Location = new System.Drawing.Point(163, 295);
-            this.ckbActivar.Name = "ckbActivar";
-            this.ckbActivar.Size = new System.Drawing.Size(137, 21);
-            this.ckbActivar.TabIndex = 14;
-            this.ckbActivar.Text = "Modificar Valores";
-            this.ckbActivar.UseVisualStyleBackColor = true;
-            this.ckbActivar.CheckedChanged += new System.EventHandler(this.ckbActivar_CheckedChanged);
+            this.tTiempo.Interval = 1000;
+            this.tTiempo.Tick += new System.EventHandler(this.tTiempo_Tick);
             // 
             // Admin
             // 
@@ -738,7 +801,6 @@
             this.Controls.Add(this.txtPID);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnFinalizarProceso);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.tcProcesos);
             this.Controls.Add(this.msPrincipal);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -756,19 +818,23 @@
             this.tcProcesos.ResumeLayout(false);
             this.tpNuevoProcesos.ResumeLayout(false);
             this.gbProcesos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProIngresado)).EndInit();
             this.gbControl.ResumeLayout(false);
             this.gbControl.PerformLayout();
             this.gbIngresar.ResumeLayout(false);
             this.gbIngresar.PerformLayout();
             this.tpProcesos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesos)).EndInit();
+            this.tpRendimiento.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cGrafica3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cGrafica2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cGrafica1)).EndInit();
             this.tpEquipo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProIngresado)).EndInit();
-            this.gbInfo.ResumeLayout(false);
-            this.gbInfo.PerformLayout();
             this.gbMaquina.ResumeLayout(false);
             this.gbMaquina.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).EndInit();
+            this.gbInfo.ResumeLayout(false);
+            this.gbInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -782,12 +848,9 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vistaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
         private System.Windows.Forms.TabControl tcProcesos;
         private System.Windows.Forms.TabPage tpNuevoProcesos;
         private System.Windows.Forms.TabPage tpProcesos;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnFinalizarProceso;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtPID;
@@ -806,9 +869,7 @@
         private System.Windows.Forms.ComboBox cbUsuario;
         private System.Windows.Forms.TextBox txtMemoria;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblMemoria;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblDisco;
         private System.Windows.Forms.TextBox txtDisco;
@@ -831,6 +892,14 @@
         private System.Windows.Forms.TextBox txtDiscoTope;
         private System.Windows.Forms.Label lblCpuTope;
         private System.Windows.Forms.CheckBox ckbActivar;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cGrafica1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cGrafica3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cGrafica2;
+        private System.Windows.Forms.Timer tTiempo;
+        private System.Windows.Forms.TextBox txtTiempo;
+        private System.Windows.Forms.Label lblTiempo;
+        private System.Windows.Forms.ToolStripMenuItem vistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
     }
 }
 

@@ -13,15 +13,16 @@ namespace AdministradorTareas
         private int pid;
         private string estado;
         private string nombreUsuario;
-        private double cpu;
-        private double memoria;
-        private double disco;
+        private int cpu;
+        private int memoria;
+        private int disco;
         private string descripcion;
+        private int tiempo;
 
         // Contructores;
         public Procesos() { }
 
-        public Procesos(string nombre, int pid, string estado, string nombreUsuario, double cpu, double memoria, double disco, string descripcion)
+        public Procesos(string nombre, int pid, string estado, string nombreUsuario, int cpu, int memoria, int disco, string descripcion, int tiempo)
         {
             this.nombre = nombre;
             this.pid = pid;
@@ -31,6 +32,7 @@ namespace AdministradorTareas
             this.memoria = memoria;
             this.disco = disco;
             this.descripcion = descripcion;
+            this.tiempo = tiempo;
         }
 
         // Métodos get y set.
@@ -58,19 +60,19 @@ namespace AdministradorTareas
             set { nombreUsuario = value; }
         }
 
-        public double CPU
+        public int CPU
         {
             get { return cpu; }
             set { cpu = value; }
         }
 
-        public double Memoria
+        public int Memoria
         {
             get { return memoria; }
             set { memoria = value; }
         }
 
-        public double Disco
+        public int Disco
         {
             get { return disco; }
             set { disco = value; }
@@ -80,6 +82,12 @@ namespace AdministradorTareas
         {
             get { return descripcion; }
             set { descripcion = value; }
+        }
+
+        public int Tiempo
+        {
+            get { return tiempo; }
+            set { tiempo = value; }
         }
     }
 }

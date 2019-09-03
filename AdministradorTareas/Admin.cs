@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace AdministradorTareas
 {
@@ -32,8 +33,6 @@ namespace AdministradorTareas
             ActualizarDatos();
 
             // Cargar datos a los ComboBox.
-            this.cbEstado.Items.Add("Ejecutando");
-            this.cbEstado.Items.Add("Suspendido");
             this.cbUsuario.Items.Add("Alfredo");
             this.cbUsuario.Items.Add("Miguel");
             this.cbUsuario.Items.Add("Sergio");
@@ -48,9 +47,9 @@ namespace AdministradorTareas
             this.ttMensajeAyuda.SetToolTip(this.txtCpu, "Ingrese números: 1, 2, 3, 4, 5...");
             this.ttMensajeAyuda.SetToolTip(this.txtMemoria, "Ingrese números: 1, 2, 3, 4, 5...");
             this.ttMensajeAyuda.SetToolTip(this.txtDisco, "Ingrese números: 1, 2, 3, 4, 5...");
-            this.ttMensajeAyuda.SetToolTip(this.cbEstado, "Elija un estado para el proceso.");
             this.ttMensajeAyuda.SetToolTip(this.cbUsuario, "Elija un usuario para el proceso.");
             this.ttMensajeAyuda.SetToolTip(this.txtDescripcion, "Ingrese letras: A, B, C...");
+            this.ttMensajeAyuda.SetToolTip(this.txtTiempo, "Ingrese números: 1, 2, 3, 4, 5...");
             this.ttMensajeAyuda.SetToolTip(this.txtPID, "Ingrese números: 1, 2, 3, 4, 5...");
             this.ttMensajeAyuda.SetToolTip(this.txtPID2, "Ingrese números: 1, 2, 3, 4, 5...");
             this.ttMensajeAyuda.SetToolTip(this.txtCPUTope, "Ingrese números: 1, 2, 3, 4, 5...");
@@ -61,6 +60,13 @@ namespace AdministradorTareas
             this.txtCPUTope.Enabled = false;
             this.txtMemoriaTope.Enabled = false;
             this.txtDiscoTope.Enabled = false;
+
+            // Gráfica y tablas.
+            cGrafica1.Titles.Add("Rendimiento");
+            cGrafica1.Series[0].Points.AddXY("", 1024);
+            cGrafica1.Series[0].Points.AddXY("", 1404);
+            cGrafica1.Series[1].Points.AddXY("", 150);
+            tTiempo.Start();
         }
 
         // Se actualiza las tablas y el total de procesos.
@@ -69,11 +75,9 @@ namespace AdministradorTareas
             // Mostrar lista en la vista Nuevo proceso.
             dgvProIngresado.DataSource = null;
             dgvProIngresado.DataSource = lp.MostrarLista();
-
             // Mostrar lista en la vista Procesos.
             dgvProcesos.DataSource = null;
             dgvProcesos.DataSource = lp.MostrarLista();
-
             // Total de procesos.
             lblTotal.Text = "Total de procesos: " + lp.Total();
         }
@@ -86,11 +90,11 @@ namespace AdministradorTareas
             this.txtCpu.Clear();
             this.txtMemoria.Clear();
             this.txtDisco.Clear();
-            this.cbEstado.SelectedIndex = -1;
             this.cbUsuario.SelectedIndex = -1;
             this.txtDescripcion.Clear();
             this.txtPID.Clear();
             this.txtPID2.Clear();
+            this.txtTiempo.Clear();
         }
 
         // Activar o desactivar Texbox de la vista Equipo.
@@ -174,18 +178,18 @@ namespace AdministradorTareas
         // Botón de Ingresar.
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (this.txtNombre.Text.Trim().Length == 0 || this.txtPidId.Text.Trim().Length == 0 || !(this.cbEstado.SelectedIndex > -1) ||
-                !(this.cbUsuario.SelectedIndex > -1) || this.txtCpu.Text.Trim().Length == 0 || this.txtMemoria.Text.Trim().Length == 0 ||
-                    this.txtDisco.Text.Trim().Length == 0 || this.txtDescripcion.Text.Trim().Length == 0)
+            if (this.txtNombre.Text.Trim().Length == 0 || this.txtPidId.Text.Trim().Length == 0 || !(this.cbUsuario.SelectedIndex > -1) || 
+                this.txtCpu.Text.Trim().Length == 0 || this.txtMemoria.Text.Trim().Length == 0 || this.txtDisco.Text.Trim().Length == 0 || 
+                this.txtDescripcion.Text.Trim().Length == 0 || this.txtTiempo.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Rellene todos los campos por favor.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                Procesos dt = new Procesos(this.txtNombre.Text, Int32.Parse(this.txtPidId.Text), this.cbEstado.Text, 
+                Procesos dt = new Procesos(this.txtNombre.Text, Int32.Parse(this.txtPidId.Text), "Ejecutando", 
                     this.cbUsuario.Text, Int32.Parse(this.txtCpu.Text), Int32.Parse(this.txtMemoria.Text), 
-                    Int32.Parse(this.txtDisco.Text), this.txtDescripcion.Text);
-
+                    Int32.Parse(this.txtDisco.Text), this.txtDescripcion.Text, Int32.Parse(this.txtTiempo.Text));
+                // Validar la busqueda.
                 if(!(lp.BuscarLista(Int32.Parse(this.txtPidId.Text))))
                 {
                     lp.InsertarLista(dt);
@@ -214,14 +218,6 @@ namespace AdministradorTareas
                 LimpiarTxt();
                 MessageBox.Show("Proceso eliminado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        // Botón de Actualizar.
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            // Se actualiza las tablas y el total de procesos.
-            ActualizarDatos();
-            MessageBox.Show("Procesos actualizados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         // Botón de Finalizar.
@@ -259,10 +255,12 @@ namespace AdministradorTareas
             MessageBox.Show("Si necesita ayuda con la aplicación contacte con el Administrador.", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
-        // Opción Actializar.
+        // Opción Actualizar.
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Se actualiza las tablas y el total de procesos.
+            lp.ReiniciarLista();
+            lp.IniciaLista();
             ActualizarDatos();
             MessageBox.Show("Procesos actualizados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -276,6 +274,18 @@ namespace AdministradorTareas
             {
                 this.Close();
             }
+        }
+
+        // Gráficas y tablas.
+        private void tTiempo_Tick(object sender, EventArgs e)
+        {
+            cGrafica1.Series[0].Points.AddXY("", 1024);
+            cGrafica1.Series[0].Points.AddXY("", 1404);
+            cGrafica1.Series[1].Points.AddXY("", 150);
+
+            lp.ReiniciarLista();
+            lp.IniciaLista();
+            ActualizarDatos();
         }
     }
 }

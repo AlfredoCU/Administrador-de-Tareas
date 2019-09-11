@@ -16,6 +16,12 @@ namespace AdministradorTareas
         // Instancia de la lista de procesos.
         ListaProcesos lp = new ListaProcesos();
         Validar v = new Validar();
+        int memoriaRAM = 4096;
+        int memoriaRAMutilizada = 0;
+        int cpu = 2000;
+        int cpuUtilizado = 0;
+        int disco = 5000;
+        int discoUtilizado = 0;
 
         // Constructor.
         public Admin()
@@ -63,10 +69,8 @@ namespace AdministradorTareas
 
             // Gráfica y tablas.
             cGrafica1.Titles.Add("Rendimiento");
-            cGrafica1.Series[0].Points.AddXY("", 1024);
-            cGrafica1.Series[0].Points.AddXY("", 1404);
-            cGrafica1.Series[1].Points.AddXY("", 150);
             tTiempo.Start();
+            timer1.Start();
         }
 
         // Se actualiza las tablas y el total de procesos.
@@ -259,7 +263,7 @@ namespace AdministradorTareas
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Se actualiza las tablas y el total de procesos.
-            lp.ReiniciarLista();
+
             lp.IniciaLista();
             ActualizarDatos();
             MessageBox.Show("Procesos actualizados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -276,16 +280,114 @@ namespace AdministradorTareas
             }
         }
 
+        public void tiempo()
+        {
+            memoriaRAMutilizada = 0;
+            discoUtilizado = 0;
+            cpuUtilizado = 0;
+            for(int x = 0; x < lp.Total(); x++)
+            {
+                lp.tiempo(x);
+                memoriaRAMutilizada = memoriaRAMutilizada + lp.ram(x);
+                discoUtilizado = discoUtilizado + lp.disco(x);
+                cpuUtilizado = cpuUtilizado + lp.cpu(x);
+            }
+            label1.Text = "RAM:" + memoriaRAMutilizada;
+        }
+
         // Gráficas y tablas.
         private void tTiempo_Tick(object sender, EventArgs e)
         {
-            cGrafica1.Series[0].Points.AddXY("", 1024);
-            cGrafica1.Series[0].Points.AddXY("", 1404);
-            cGrafica1.Series[1].Points.AddXY("", 150);
-
-            lp.ReiniciarLista();
-            lp.IniciaLista();
+            if (memoriaRAM > memoriaRAMutilizada)
+            {
+                lp.IniciaLista();
+            }
             ActualizarDatos();
+        }
+
+        private void DgvProIngresado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void VistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DgvProIngresado_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvProIngresado.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                if (e.Value.Equals("Ejecutando"))
+                {
+                    e.CellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                }
+            }
+            if (this.dgvProIngresado.Columns[e.ColumnIndex].Name == "Tiempo")
+            {
+                if (Convert.ToInt32(e.Value) > 0)
+                {
+                    e.CellStyle.BackColor = Color.Blue;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void DgvProcesos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvProcesos.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                if (e.Value.Equals("Ejecutando"))
+                {
+                    e.CellStyle.BackColor = Color.Green;
+                }
+                else{
+                    e.CellStyle.BackColor = Color.Red;
+                }
+            }
+            if(this.dgvProcesos.Columns[e.ColumnIndex].Name == "Tiempo")
+            {
+                if (Convert.ToInt32(e.Value) > 0)
+                {
+                    e.CellStyle.BackColor = Color.Blue;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            
+            tiempo();
+            ActualizarDatos();
+            label4.Text = "RAM: " + memoriaRAMutilizada + "\n" + ((100*memoriaRAMutilizada)/memoriaRAM + "% en uso") ;
+            label5.Text = "CPU: " + cpuUtilizado + "\n" + ((100 * cpuUtilizado) / cpu + "% en uso");
+            label6.Text = "Disco: " + discoUtilizado + "\n" + ((100 * discoUtilizado) / disco + "% en uso");
+            cGrafica1.Series[0].Points.AddXY("", cpuUtilizado);
+            cGrafica1.Series[1].Points.AddXY("", memoriaRAMutilizada);
+            cGrafica1.Series[2].Points.AddXY("", discoUtilizado);
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DgvProcesos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

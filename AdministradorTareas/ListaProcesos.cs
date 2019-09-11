@@ -10,11 +10,14 @@ namespace AdministradorTareas
     {
         // Instancia.
         private List<Procesos> pro = new List<Procesos>();
-
+        public String[] nombreProceso = new string[10];
+        public String[] tipoProceso = new string[3];
+        public String[] desc = new string[10];
         // Constructor.
         public ListaProcesos() { }
 
         // Métodos get y set.
+
         public List<Procesos> ProcesosLista
         {
             get { return pro; }
@@ -76,52 +79,69 @@ namespace AdministradorTareas
             return ProcesosLista.Count();
         }
 
+        public int disco(int x)
+        {
+            if (ProcesosLista[x].Estado.Equals("Ejecutando"))
+            {
+                return ProcesosLista[x].Disco;
+            }
+            return 0;
+        }
+
+        public int cpu(int x)
+        {
+            if (ProcesosLista[x].Estado.Equals("Ejecutando"))
+            {
+                return ProcesosLista[x].CPU;
+            }
+            return 0;
+        }
+
+        public int ram(int x)
+        {
+            if (ProcesosLista[x].Estado.Equals("Ejecutando"))
+            {
+                return ProcesosLista[x].Memoria;
+            }
+            return 0;
+        }
+
+        public void tiempo(int indice)
+        {
+            int valor = ProcesosLista[indice].Tiempo;
+            if (ProcesosLista[indice].Tiempo > 0)
+            {
+                valor--;
+                ProcesosLista[indice].Tiempo = valor;
+            }
+            else
+            {
+                ProcesosLista[indice].Estado = "FInalizado";
+            }
+        }
+
         // Iniciar lista con datos.
         public void IniciaLista()
         {
             Random num = new Random();
-            Procesos dt1 = new Procesos("explorer.exe", 16240, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Explorador de Windows", 60);
+            nombreProceso[0] = "explorer.exe";
+            nombreProceso[1] = "System";
+            nombreProceso[2] = "Spotify.exe";
+            nombreProceso[3] = "avp.exe";
+            nombreProceso[4] = "audiodg.exe";
+            nombreProceso[5] = "SearchUI.exe";
+            nombreProceso[6] = "SkypeApp.exe";
+            nombreProceso[7] = "CCleaner64.exe";
+            nombreProceso[8] = "AppleMobileDeviceService.exe";
+            tipoProceso[0] = "Uribe";
+            tipoProceso[1] = "Alfredo";
+            tipoProceso[2] = "Miguel";
+            desc[0] = "NT kernel & System";
+            desc[1] = "Spotify";
+            desc[2] = "Simbolo del sistema";
+            desc[3] = "Navegador web";
+            Procesos dt1 = new Procesos(nombreProceso[num.Next(0,9)], num.Next(0,1620), "Ejecutando", tipoProceso[num.Next(0,2)], num.Next(100, 180), num.Next(1, 300), num.Next(100, 500), desc[num.Next(0,3)], num.Next(15,90));
             ProcesosLista.Add(dt1);
-            Procesos dt2 = new Procesos("System", 4, "Ejecutando", "SYSTEM", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "NT kernel & System", 35);
-            ProcesosLista.Add(dt2);
-            Procesos dt3 = new Procesos("Spotify.exe", 17996, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Spotify", 40);
-            ProcesosLista.Add(dt3);
-            Procesos dt4 = new Procesos("avp.exe", 3000, "Ejecutando", "SYSTEM", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Kaspersky Anti-Virus", 65);
-            ProcesosLista.Add(dt4);
-            Procesos dt5 = new Procesos("audiodg.exe", 27972, "Ejecutando", "SERVICIO LOCAL", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Aislamiento de gráficos de dispositivo de audio de Windows", 60);
-            ProcesosLista.Add(dt5);
-            Procesos dt6 = new Procesos("SearchUI.exe", 14356, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Search and Cortana application", 60);
-            ProcesosLista.Add(dt6);
-            Procesos dt7 = new Procesos("SkypeApp.exe", 5472, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SkypeApp", 42);
-            ProcesosLista.Add(dt7);
-            Procesos dt8 = new Procesos("CCleaner64.exe", 7476, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "CCleaner", 50);
-            ProcesosLista.Add(dt8);
-            Procesos dt9 = new Procesos("explorer.exe", 21048, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Google Chrome", 30);
-            ProcesosLista.Add(dt9);
-            Procesos dt10 = new Procesos("AppleMobileDeviceService.exe", 36600, "Ejecutando", "SYSTEM", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "MobileDeviceService", 20);
-            ProcesosLista.Add(dt10);
-            Procesos dt11 = new Procesos("sadwd.exe", 8546, "Ejecutando", "SYSTEM", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SYSTEM", 45);
-            ProcesosLista.Add(dt11);
-            Procesos dt12 = new Procesos("asdqs.exe", 5545, "Ejecutando", "SYSTEM", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SYSTEM", 21);
-            ProcesosLista.Add(dt12);
-            Procesos dt13 = new Procesos("erdfs.exe", 84538, "Ejecutando", "SYSTEM", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SYSTEM", 25);
-            ProcesosLista.Add(dt13);
-            Procesos dt14 = new Procesos("erds.exe", 8458, "Ejecutando", "SYSTEM", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SYSTEM", 40);
-            ProcesosLista.Add(dt14);
-            Procesos dt15 = new Procesos("fcvews.exe", 844595, "Ejecutando", "SERVICIO LOCAL", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SERVICIO LOCAL", 50);
-            ProcesosLista.Add(dt15);
-            Procesos dt16 = new Procesos("sdeed.exe", 994557, "Ejecutando", "SERVICIO LOCAL", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SERVICIO LOCAL", 60);
-            ProcesosLista.Add(dt16);
-            Procesos dt17 = new Procesos("fesd.exe", 3087, "Ejecutando", "SERVICIO LOCAL", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "SERVICIO LOCAL", 20);
-            ProcesosLista.Add(dt17);
-            Procesos dt18 = new Procesos("Whatsapp.exe", 128668, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Whatsapp", 60);
-            ProcesosLista.Add(dt18);
-            Procesos dt19 = new Procesos("VisualStudio.exe", 1745, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "VisualStudio", 55);
-            ProcesosLista.Add(dt19);
-            Procesos dt20 = new Procesos("Latex.exe", 23571, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Texmaker", 50);
-            ProcesosLista.Add(dt20);
-            Procesos dt21 = new Procesos("Apex.exe", 95137, "Ejecutando", "Alfredo", num.Next(0, 20), num.Next(1, 300), num.Next(0, 10), "Apex", 20);
-            ProcesosLista.Add(dt21);
         }
     }
 }

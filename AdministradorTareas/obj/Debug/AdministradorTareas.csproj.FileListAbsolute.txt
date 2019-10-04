@@ -38,3 +38,12 @@ C:\Users\Jorge\Documents\9 semestre\Sistemas Operativos\Practica 1\Administrador
 C:\Users\Jorge\Documents\9 semestre\Sistemas Operativos\Practica 1\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.pdb
 C:\Users\Alfredo\Desktop\practica1-master\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.exe
 C:\Users\Alfredo\Desktop\practica1-master\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.pdb
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\bin\Debug\AdministradorTareas.exe.config
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.exe
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.pdb
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\bin\Debug\AdministradorTareas.exe
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\bin\Debug\AdministradorTareas.pdb
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.csprojResolveAssemblyReference.cache
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.Admin.resources
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.Properties.Resources.resources
+C:\Users\Alfredo\Documents\Universidad de Guadalajara CUCEI\Ing. Computación\Materias\Sistemas Operativos\Prácticas\Práctica 1\Administrador de tareas\AdministradorTareas\obj\Debug\AdministradorTareas.csproj.GenerateResource.Cache
